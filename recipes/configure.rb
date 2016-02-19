@@ -71,7 +71,10 @@ else
   end
 end
 
+## if service memcached disabled/not running,do
 service 'memcached' do
   action [:enable, :start]
   supports status: true, start: true, stop: true, restart: true, enable: true
 end
+
+## ELSE, do action [:restart]
