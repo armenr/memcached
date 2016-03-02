@@ -64,8 +64,11 @@ user service_user do
   action :nothing
 end
 
+## THIS IS WHAT STOPS THE SERVICE, NO MATTER WHAT
 # Disable the default memcached service so we configure it from the custom resource
 # If the memcached::default is included the configure.rb recipe will start/enable the service
-service 'memcached' do
-  action [:stop, :disable]
-end
+
+# unless /etc/memcached.conf contains "managed by chef", do
+
+# if (node.attribute?('something') && ! FileTest.directory?(node['memcached']['config_path']))
+# if File.readlines("/etc/memcached").grep(/Chef/).any?  -- so what's the opposite of this?
