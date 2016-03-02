@@ -72,7 +72,3 @@ end
 
 # if (node.attribute?('something') && ! FileTest.directory?(node['memcached']['config_path']))
 # if File.readlines("/etc/memcached").grep(/Chef/).any?  -- so what's the opposite of this?
-
-service 'memcached' do
-  action [:stop, :disable]
-end
